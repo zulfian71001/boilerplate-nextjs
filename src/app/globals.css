@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body{
+    @apply bg-slate-50 dark:bg-slate-900 text-black dark:text-white 
+  }
+}
+
 h1 {
   font-size: 2.25rem; 
 }
