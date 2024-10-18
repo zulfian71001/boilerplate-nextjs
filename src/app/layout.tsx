@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import TanstackQueryProvider from "@/lib/tanstack-query/TanstackQueryProvider";
+import ReduxProvider from "@/lib/redux/ReduxProvider";
+import NextThemeProvider from "@/lib/next-themes/NextThemeProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <TanstackQueryProvider>
+          <ReduxProvider>
+            <NextThemeProvider>{children}</NextThemeProvider>
+          </ReduxProvider>
+        </TanstackQueryProvider>
       </body>
     </html>
   );
