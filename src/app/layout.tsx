@@ -28,10 +28,12 @@ const { title, description, url } = baseMetadata;
 
 export const metadata: Metadata = {
   metadataBase:new URL(env.NEXT_PUBLIC_PRODUCTION_URL),
-  
   title,
+  description,
+  keywords:["Zulfian Nafis","zulfian nafis", "zulfiannafis", "Zulfian portfolio", "portfolio zulfian nafis"],
   openGraph: {
     type:"website",
+    images:[""],
     title,
     description,
     url,
@@ -39,6 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title,
+    images:[""],
     description,
     site: url,
     card: "summary_large_image",
